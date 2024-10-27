@@ -1,0 +1,423 @@
+/*selector universal*/
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/*************************** DISEÑO DE ESTILO PARA EL HEADER Y EL MENU ************************/
+header {
+    position: fixed; /*La posición fija es muy usada cuando se hacen menús de navegación. 
+    Lo usamos cuando un elemento debe estar siempre en el mismo lugar de la página en todo momento. 
+    Simplemente no se mueve.*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+   /* background-color: lightgrey;
+    border: 15px solid green;
+    outline: #4CAF50 solid 10px;
+    outline-style: dotted;
+    background: #46a2fd;*/
+    background: white;
+    box-shadow: 0 4px 25px -22px #317c37;
+    z-index: 2;
+}
+
+.header-contenido {
+    max-width: 1200px;
+    /*width: 1200px;*/
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 80px;
+    display: flex; /*capacidad de un elemento flexible para alterar sus dimensiones y llenar el espacio disponible*/
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 b {
+    color: #317c37;
+}
+
+.menu {
+    height: 80px;
+}
+
+.menu nav {
+    height: 100%;
+}
+
+.menu nav ul {
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.menu nav ul li {
+    height: 100%;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/*para mostrar una linea encima de la opcion de menu "blog"*/
+.menu-seleccionado:before{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #317c37;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*color de las opciones del menu no seleccionadas*/
+.menu nav ul li a{
+    color: #777777;
+}
+
+/*color de la opcion del menu seleccionada*/
+.menu .text-menu-seleccionado {
+    color: #317c37;
+}
+
+/*efecto de transicion de las opciones del menu*/
+.menu nav ul li a:hover {
+    color: #317c37;
+    font-size: 18px;
+    transition:color 300ms;
+}
+
+.menu nav ul li a i {
+    display: none; /*para que no muestre los iconos*/
+}
+
+
+/****************************ESTILO PARA LA PORTADA*************************/
+.container-portada{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-top: 80px; /*para separar la portada del parrafo del articulo */
+    background-image: url(Img/Bonsai\ portada.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-portada:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    /*background: rgba(38, 172, 255, 0.8);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container-info-portada {
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-portada h1{
+    font-size: 60px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container-info-portada p{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/****************************ESTILO PARA EL ARTICULO*************************/
+.container-contenido {
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    
+    /*estilo para permitir ubicar el aside al lado derecho*/
+    display: flex;
+    justify-content: center;
+
+}
+
+article {
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: -10px 0 20px -30px black;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+article:before{
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #317c37;
+}
+
+article h1 {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+article h2 {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+article p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #3c3c3c;
+}
+
+article img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/***********************ESTILO PARA EL ASIDE DE LOS ARTICULOS RELACIONADOS*************************/
+.container-aside aside{
+    width: 320px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px -20px black;
+    overflow: hidden;
+    margin-left: 40px; /*para separarlo del articulo*/
+    margin-bottom: 40px; /*para separar todos los asides */
+    padding-bottom: 20px;
+
+}
+
+.container-aside img {
+    width: 100%;
+}
+
+.container-aside h2, .container-aside aside p{
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.container-aside aside button {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 50px;
+    font-size: 16px;
+    background: #46a2fd;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.container-aside aside button:hover{
+    opacity: 0.9;
+}
+
+/*Footer*/
+
+.container-footer {
+    width: 100%;
+    padding: 40px 0;
+    background: #f7f7f7;
+    margin-top: 40px;
+}
+
+.container-footer footer {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-footer footer .logo-footer {
+    text-align: center;
+
+}
+
+.container-footer footer .logo-footer img {
+    width: 100px;
+}
+
+.container-footer footer .redes-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container-footer footer .redes-footer .icon-redes-footer {
+    font-size: 20px;
+    margin: 20px;
+    background: #efefef;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #a2a2a2
+}
+
+.container-footer footer hr {
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background: #7a7a7a7a;
+}
+
+.container-footer h4 {
+    text-align: center;
+    margin-top: 20px;
+    color: #8e8e8e;
+}
+
+.form-container {
+    position: relative; /* Posicionamiento relativo para el contenedor */
+}
+
+.form-container body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7f9;
+}
+
+/* Formulario fijo y moderno */
+.form-container form {
+    width: 320px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Encabezado del formulario */
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilos de etiquetas */
+.form-container label {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    display: block;
+    font-size: 0.9em;
+}
+
+/* Estilos de los campos de entrada */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Botón de registrar */
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+/* Botón de ocultar */
+.form-container #ocultar-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-container #ocultar-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Botón para mostrar el formulario */
+.form-container #mostrar-form-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.form-container #mostrar-form-btn:hover {
+    background-color: #357abd;
+}
